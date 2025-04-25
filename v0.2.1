@@ -2,15 +2,16 @@
 
 class Impact:
     def __init__ (self, address,biome,damage):
+        self.name = name
         self.address = address
         self.biome = biome
         self.damage = damage
         self.FireSpreadChance = 0
 
-    # The user specifies the percent humidity and percent of the wind speed
-    # to assess how likely fire is to spred.
+    # Assessing how likely the fire spread based on humidity and wind speed
     
-    def FireSpreadAssessment(self, RalativeHumidityPercent, WindSpeedPercent ):
+    def FireSpreadAssessment(self, RalativeHumidityPercent, WindSpeedPercent):
+    
         if  RalativeHumidityPercent <= 0.15 :
             self.FireSpreadChance += 1
             print( "The humidity icreases the likelyhood of fire spreading.")
