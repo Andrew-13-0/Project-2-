@@ -1,7 +1,7 @@
 # --------Class that Uses information on which area is impacted to assess the damage--------
 
 class Impact:
-    def __init__ (self, address,biome,damage):
+    def __init__ (self, address, biome, damage):
         self.name = name
         self.address = address
         self.biome = biome
@@ -17,7 +17,7 @@ class Impact:
             self.FireSpreadChance += 1
             print("The humidity icreases the likelyhood of fire spreading.")
         else:
-            print("The humidity decreases the likelyhood fire spreading." )
+            print("The humidity decreases the likelyhood fire spreading.")
         
         if  WindSpeedPercent >= 0.1 :
             self.FireSpreadChance += 1
@@ -63,31 +63,29 @@ class HelpQueue:
             print("No one in queue")
 
 
-# creates 6 people acting as people in queue with different priorities
-# added and removed from queue 
 
 print ("\n------ Adding to queue ------\n" )
+# creating people and areas affected by wildfire'
 
-Queue1 = HelpQueue()
-Person1 = Impact("13235 Impact Ave 17333 ", "Forest", "Severely Damaged" )
-Person1.FireSpreadAssessment(.34, .43)
+impact1 = Impact("Teddy", "666 No-brainy Ave", "Forest", "Moderately Damaged")
+impacg2 = Impact("Amie", "1234 Impact Road", "Mountain", "Severely Damaged")
+impact3 = Impact("Jill", "367 Green Valley", "Grassland", "Minor Damaged")
 
-Person1 = Queue1.AddStrandardQueue("Bill")
-Person2 = Queue1.AddStrandardQueue("Ted")
-Person3 = Queue1.AddStrandardQueue("Bob")
+# Asses Fire Risk
 
-Person4 = Queue1.AddPriorityQueue("Amy")
-Person5 = Queue1.AddPriorityQueue("Jill")
-Person6 = Queue1.AddPriorityQueue("Mandy")
+impact1.FireSpreadAssessment(0.18, 0.25)
+impact2.FirstSpreadAssessment(0.15, 0.20)
+impact3.FireSPreadAssesment(0.30, 0.40)
 
-print(Queue1.queue)
-print(Queue1.Pqueue)
+# Queue people based on assesment and damage
+queue = HelpQueue()
+queue.AddToQueue(impact1)
+queue.AddToQueue(impact2)
+queue.AddToQueue(impact3)
 
-print ("\n------ Removing from queue ------\n" )
+queue.RemoveFromQueue()
+queue.RemoveFromQueue()
+queue.RemoveFromQueue()
 
-Queue1.removeQueue()
-Queue1.removeQueue()
-Queue1.removeQueue()
-Queue1.removeQueue()
-Queue1.removeQueue()
-Queue1.removeQueue()
+
+
