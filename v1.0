@@ -31,6 +31,14 @@ class ImpactedPerson:
         elif self.FireSpreadChance == 2:
             print("Assessment: Danger")
 
+    # Retrieves the information of the object a and prints it out
+    def GetInfo(self):
+        print("="*35)
+        print(f"Name: {self.name}")
+        print(f"Address: {self.address}")
+        print(f"Biome: {self.biome}")
+        print(f"Damage: {self.damage}")
+        print("="*35)
 
 # --------Adds Queue System--------
 class HelpQueue:
@@ -59,7 +67,26 @@ class HelpQueue:
         else:
             print("No one is in the queue")
 
-
+# Prints the list of people in both queues
+    def GetStandardQueue(self):
+        print("="*35)
+        print("\tQueue Information\n")
+        for person in self.__Queue:
+            print(person.GetInfo())
+            
+    # Prints the list of people in both queues
+    def GetStandardQueue(self):
+        print("="*35)
+        print("\tQueue Information\n")
+        for person in self.__Queue:
+            print(person.GetInfo())
+         
+    #retreives info on each person in the priority queue     
+    def GetPriorityQueue(self):
+        print("="*35)
+        print(" \tPriority Queue Information\n")
+        for person in self.__PriorityQueue:
+            print(person.GetInfo())
 #Testing
 
 print ("\n------ Creating Persons ------\n" )
@@ -82,6 +109,12 @@ queue.AddToQueue(Person1)
 queue.AddToQueue(Person2)
 queue.AddToQueue(Person3)
 queue.AddToQueue(Person4)
+
+print ("\n------ Get List Test------\n" )
+
+queue.GetStandardQueue()
+queue.GetPriorityQueue()
+
 
 print ("\n------ Removing From queue ------\n" )
 
