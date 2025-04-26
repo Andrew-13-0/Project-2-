@@ -21,14 +21,14 @@ class Impact:
         
         if  WindSpeedPercent >= 0.1 :
             self.FireSpreadChance += 1
-            print(" the wind speed increases the likelyhood of spreading fire")
+            print("the wind speed increases the likelyhood of spreading fire")
         else:
-            print( "the wind speed decreases the likelyhood of spreading fire" )
+            print( "the wind speed decreases the likelyhood of spreading fire")
         if self.FireSpreadChance == 0:
             print("Assessment: Safe")
         elif  self.FireSpreadChance == 1:
             print("Assessment: Caution")
-        elif self.FireSpreadChance == 2 :
+        elif self.FireSpreadChance == 2:
             print("Assessment: Danger")
 
         return self.FirstSpreadChance
@@ -42,12 +42,13 @@ class HelpQueue:
         
     # Adds person to the Standard queue   
     def AddStrandardQueue(self,person):
-        self.queue.append(person)
+        if person.damage == "Severely Dameged" or person.FireSpreadChance == 2:
+        self.priority_queue.append(person)
         print(f"{person} is added to queue")
 
     # Adds person to the Piority queue 
     def AddPriorityQueue(self,person):
-        self.Pqueue.append(person)
+        self.Piority_queue.append(person)
         print(f"{person} is added to Priority queue")
 
     # Removes people from both queues starting with the Priority and ending with the Standard 
