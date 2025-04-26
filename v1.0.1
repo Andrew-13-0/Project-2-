@@ -72,21 +72,16 @@ class HelpQueue:
         print("="*35)
         print("\tQueue Information\n")
         for person in self.__Queue:
-            print(person.GetInfo())
+            person.GetInfo()
             
-    # Prints the list of people in both queues
-    def GetStandardQueue(self):
-        print("="*35)
-        print("\tQueue Information\n")
-        for person in self.__Queue:
-            print(person.GetInfo())
+   
          
     #retreives info on each person in the priority queue     
     def GetPriorityQueue(self):
         print("="*35)
         print(" \tPriority Queue Information\n")
         for person in self.__PriorityQueue:
-            print(person.GetInfo())
+            person.GetInfo()
 #Testing
 
 print ("\n------ Creating Persons ------\n" )
