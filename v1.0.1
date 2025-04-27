@@ -7,6 +7,7 @@ class ImpactedPerson:
         self.biome = biome
         self.damage = damage
         self.FireSpreadChance = 0
+        print(f"Creating {self.name} at {self.address} ")
 
     # Assessing how likely the fire spread based on humidity and wind speed
     
@@ -88,7 +89,7 @@ print ("\n------ Creating Persons ------\n" )
 
 Person1 = ImpactedPerson("Teddy", "666 No-brainer Ave", "Forest", "Moderately Damaged")
 Person2 = ImpactedPerson("Amie", "1234 Impact Road", "Mountain", "Severely Damaged")
-Person3 = ImpactedPerson("Jill", "367 Green Valley", "Grassland", "Minor Damaged")
+Person3 = ImpactedPerson("Jill", "367 Green Valley", "Grassland", "Minor Damage")
 Person4 = ImpactedPerson("Tom", "3213 Nothing Road", "Forest", "Severely Damaged")
 
 print ("\n------ Fire Risk Assessment ------\n" )
